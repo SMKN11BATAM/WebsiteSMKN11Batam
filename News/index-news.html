@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Website of SKANELAS</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Custom CSS for black background -->
+  <style>
+    body {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    .section:not(.dark-background) {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    .light-background {
+      background-color: #111111 !important;
+    }
+    .service-item, .portfolio-content, .member, .stats-item {
+      background-color: #111111 !important;
+    }
+    p, h1, h2, h3, h4, h5, h6 {
+      color: #ffffff !important;
+    }
+    /* Add new style for member section text */
+    .member .member-info h4,
+    .member .member-info span,
+    .member .member-info .social a {
+      color: #000000 !important;
+    }
+    /* Add new style for map section text */
+    #map .info-item h3,
+    #map .info-item p {
+      color: #000000 !important;
+    }
+    /* Add new style for services section text */
+    .service-item h3,
+    .service-item p {
+      color: #000000 !important;
+    }
+
+    .vision-mission-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .vision-box, .mission-box {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .vision-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #fff;
+    }
+
+    .mission-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mission-list li {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .mission-list li i {
+      color: #fff;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .vision-mission-container {
+        padding: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .vision-text, .mission-list li {
+        font-size: 0.95rem;
+      }
+    }
+
+    .maps[_ngcontent-ng-c1812907692]   iframe[_ngcontent-ng-c1812907692] {
+  padding:24px;
+  width:70%;
+  height:291.542px;
+  flex-shrink:0;
+  margin-bottom:50px;
+  border-radius:25px
+}
+  </style>
+
+  <!-- Favicons -->
+  <link href="assets/img/clients/Logo-SMKN11Batam.png" rel="icon">
+  <link href="assets/img/clients/Logo-SMKN11Batam.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "https://raw.githubusercontent.com/allmezzi/FutsalFlex2025/main/TopScorePutra.txt",
+            dataType: 'text',
+            success: function(data) {
+                var rows = data.split("\n");
+                var dataArray = [];
+
+                for (var i = 0; i < rows.length; i++) {
+                    var columns = rows[i].split(",");
+                    dataArray.push([$.trim(columns[0]), $.trim(columns[1]), parseInt($.trim(columns[2]))]);
+                }
+
+                $('#myTable').DataTable({
+                    data: dataArray,
+                    columns: [
+                        { title: "Nama Pemain" },
+                        { title: "Nama Tim" },
+                        { title: "Gol", type: "num" } // Set the type as numeric
+                        // Add more columns as needed
+                    ],
+                    order: [[2, "desc"]] // Order by the third column descending
+                });
+            },
+            error: function(xhr, textStatus, error) {
+                alert("Error: " + textStatus + ", " + error);
+            }
+        });
+
+  </script>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/clients/Logo-SMKN11Batam.png" alt="">
+        <h1 class="sitename">SMKN 11 Batam</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Profil</a></li>
+          <li><a href="#portfolio">News</a></li>
+          <li><a href="#team">Data GTK</a></li>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Gallery</a></li>
+              <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Gallery</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Gallery</a></li>
+			  <li><a href="home.html">Gallery</a></li><!-- menambahkan link d folder yang sama-->
+			  <li><a href="test/view.html">Gallery</a></li>
+			  <li><a href="../app/mezi.html">Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="index.html#home">Login</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>SMKN 11 Batam News</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/img-news/2 Mei 2025/1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/img-news/2 Mei 2025/2.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/img-news/2 Mei 2025/3.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/img-news/2 Mei 2025/4.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200" style="color: #000000;">
+              <ul style="color: #000000;">
+                <li><strong style="color: #000000;">Tanggal</strong><span style="color: #000000;">: 2 Mei 2025</span></li>
+                <li><strong style="color: #000000;">Judul</strong><span style="color: #000000;">: Peringatan Hari Pendidikan Nasional Tahun 2025</span></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <p>
+                Makan bersama setelah upacara peringatan Hari Pendidikan Nasional Tahun 2025
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about mx-auto text-center">                     
+          </div>
+          <div class="social-links d-flex mt-4 justify-content-center">
+            <a href="https://www.tiktok.com/@smkn11batamofficial/" target="_blank"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61565357243927&__cft__[0]=AZW-3KgOvYq7c-s46ln7Ty7Dz0LdescRdqN7EUbzDSXDGgsDwiEd7fNrusqUDzV90PdJyNFTI3GZOKJMRkpW5ojjKZS-GrslfS6NLw48UcVjzwXJCJLTt0QlqNxajkGDD5JcGhO3jNGTwxvm-_SyefBf0TcihiyfLLm0iAiPXVKuOasvRKxhwGaqmLAwil-LUI1dvimNPw7SEi_zs2_knmH5&__tn__=-UC%2CP-R" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/smkn11batamofficial/#/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCiTPeDkYAtQZkacoP6qVTEA" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://smkn11batam.sch.id/" target="_blank"><i class="bi bi-globe"></i></a>
+          </div>
+          <div class="footer-contact pt-3 text-center">
+            <p>Copyright 2025 </p>            
+            <p>Website Developed and Designed by Yulando Adhaputra </p>
+            <p>IT SMKN 11 Batam</p>
+          </div>
+
+        <!-- Footer Links 
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+     <!--  <p>© <span>Copyright</span> <strong class="px-1 sitename">Dewi</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div> --> 
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
