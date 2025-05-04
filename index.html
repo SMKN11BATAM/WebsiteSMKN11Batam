@@ -168,6 +168,63 @@
     .close-popup:hover {
       color: #ccc;
     }
+
+    /* Add new styles for news images */
+    .portfolio-content {
+      border: 3px solid #28a745;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
+    }
+    
+    .portfolio-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(40, 167, 69, 0.5);
+    }
+
+    .portfolio-content img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-content:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .portfolio-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .portfolio-info p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #cccccc;
+    }
+
+    .portfolio-info .preview-link,
+    .portfolio-info .details-link {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      font-size: 1.2rem;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-info .preview-link:hover,
+    .portfolio-info .details-link:hover {
+      color: #28a745;
+    }
   </style>
 
   <!-- Favicons -->
@@ -185,6 +242,12 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -236,9 +299,9 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Profil</a></li>
-          <li><a href="#portfolio">News</a></li>
-          <li><a href="#team">Data GTK</a></li>
+          <li><a href="#Profile">Profil</a></li>
+          <li><a href="#News">News</a></li>
+          <li><a href="#DataGTK">Data GTK</a></li>
           <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Gallery</a></li>
@@ -502,56 +565,58 @@
     </section><!-- /Stats Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="Profile" class="services section">  
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <p>Konsentrasi Keahlian<br></p>
       </div><!-- End Section Title -->
 
-<div class="container" data-aos="fade-up" data-aos-delay="100">
-  <div class="row gy-5 justify-content-center">
-    
-    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-      <div class="service-item">
-        <div class="img">
-          <img src="assets/img/Logo-TEI.png" class="img-fluid" alt="">
-        </div>
-        <div class="details position-relative">
-          <div class="icon">
-            <i class="bi bi-activity"></i>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-5 justify-content-center">
+            
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/Logo-TEI.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-activity"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan tei-->
+                    <h3>Teknik Elektronika Industri</h3>
+                  </a>
+                  <p>Urusan Teknik Elektronika Industri adalah bidang studi yang fokus pada perancangan, instalasi, pemeliharaan, dan perbaikan sistem elektronik.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="service-item">
+                <div class="img">
+                  <img src="assets/img/Logo-TITL.png" class="img-fluid" alt="">
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-broadcast"></i>
+                  </div>
+                  <a href="#" class="stretched-link"> <!-- link jurusan titl-->
+                    <h3>Teknik Instalasi Tenaga Listrik</h3>
+                  </a>
+                  <p>Jurusan Teknik Instalasi Tenaga Listrik (TITL) fokus pada perencanaan, pemasangan, pengoperasian, dan pemeliharaan sistem instalasi listrik.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-center mt-4 konke" data-aos="fade-up" data-aos-delay="700">
+              <a href="Konsentrasi Keahlian/index.html" class="btn btn-success" target="_blank">More Konsentrasi Keahlian <i class="bi bi-arrow-right"></i></a>
+            </div>  
+
           </div>
-          <a href="#" class="stretched-link"> <!-- link jurusan tei-->
-            <h3>Teknik Elektronika Industri</h3>
-          </a>
-          <p>Urusan Teknik Elektronika Industri adalah bidang studi yang fokus pada perancangan, instalasi, pemeliharaan, dan perbaikan sistem elektronik.</p>
         </div>
       </div>
-    </div>
-
-    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-      <div class="service-item">
-        <div class="img">
-          <img src="assets/img/Logo-TITL.png" class="img-fluid" alt="">
-        </div>
-        <div class="details position-relative">
-          <div class="icon">
-            <i class="bi bi-broadcast"></i>
-          </div>
-          <a href="#" class="stretched-link"> <!-- link jurusan titl-->
-            <h3>Teknik Instalasi Tenaga Listrik</h3>
-          </a>
-          <p>Jurusan Teknik Instalasi Tenaga Listrik (TITL) fokus pada perencanaan, pemasangan, pengoperasian, dan pemeliharaan sistem instalasi listrik.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-12 text-center mt-4" data-aos="fade-up" data-aos-delay="700">
-      <a href="Konsentrasi Keahlian/index.html" class="btn btn-success" target="_blank">More Konsentrasi Keahlian <i class="bi bi-arrow-right"></i></a>
-    </div>  
-
-  </div>
-</div>
+    </section>
 
 
 <div class="container section-title" data-aos="fade-up">
@@ -686,7 +751,7 @@
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item d-flex position-relative h-100">
-              <i class="bi bi-trophy icon flex-shrink-0"></i>
+              <i class="fa-solid fa-futbol icon flex-shrink-0" style="font-size: 2rem; color: #ff0000; display: flex; align-items: center; justify-content: center;"></i>
               <div>
                 <h4 class="title"><a href="#" class="stretched-link">Futsal Siswa SMKN 11 Batam</a></h4>
                 <p class="description" style="color: #ffffff !important;">Juara 2</p>
@@ -758,7 +823,7 @@
     <!-- /Testimonials Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="News" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -786,7 +851,7 @@
                   <h4>Peringatan Hari Pendidikan Nasional Tahun 2025</h4>
                   <p>Makan Bersama Guru SMKN 11 Batam</p>
                   <a href="assets/img/newsassets/guru-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="News/index-news.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="News/index-news.html#Berita1" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -807,10 +872,10 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/newsassets/iduka-1.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>MoU SMKN 11` Batam dengan Perusahaan di Batam</h4>
-                  <p>Kepala SMKN 11 Batam menjalin dengan Perusaahaan</p>
+                  <h4>Update Soon</h4>
+                  <p>Update Soon</p>
                   <a href="assets/img/newsassets/iduka-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="News/index-news.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="News/index-news.html#Berita2" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -936,7 +1001,7 @@
     </div>
 
     <!-- Team Section -->
-    <section id="team" class="team section light-background">
+    <section id="DataGTK" class="team section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
